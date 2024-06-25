@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MN Technologies (MN Tek) - Innovative IT Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Dark Theme */
+        .dark-theme {
+            --primary-color: #4a90e2;
+            --secondary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --text-color: #e0e0e0;
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        .dark-theme header {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1497366216548-37526070297c');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .dark-theme nav {
+            background-color: var(--card-bg);
+            padding: 1rem;
+        }
+
+        .dark-theme nav ul li a {
+            color: var(--text-color);
+        }
+
+        .dark-theme .service-card,
+        .dark-theme .about-content,
+        .dark-theme .contact-info {
+            background-color: var(--card-bg);
+            border: 1px solid #333;
+        }
+
+        .dark-theme h2 {
+            color: var(--primary-color);
+        }
+
+        .dark-theme footer {
+            background-color: var(--secondary-color);
+        }
+
+        /* Minimalist Light Theme */
+        .minimalist-theme {
+            --primary-color: #333333;
+            --secondary-color: #666666;
+            --accent-color: #007bff;
+            --text-color: #333333;
+            --bg-color: #ffffff;
+            --card-bg: #f8f9fa;
+
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        .minimalist-theme header {
+            background-color: var(--bg-color);
+            color: var(--primary-color);
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .minimalist-theme nav {
+            background-color: var(--bg-color);
+            border-bottom: 1px solid #eee;
+            padding: 1rem;
+        }
+
+        .minimalist-theme nav ul li a {
+            color: var(--primary-color);
+        }
+
+        .minimalist-theme .service-card,
+        .minimalist-theme .about-content,
+        .minimalist-theme .contact-info {
+            background-color: var(--card-bg);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: none;
+        }
+
+        .minimalist-theme h2 {
+            color: var(--primary-color);
+        }
+
+        .minimalist-theme footer {
+            background-color: var(--card-bg);
+            color: var(--primary-color);
+        }
+
+        /* Colorful Bold Theme */
+        .colorful-theme {
+            --primary-color: #ff6b6b;
+            --secondary-color: #4ecdc4;
+            --accent-color: #feca57;
+            --text-color: #2d3436;
+            --bg-color: #ffffff;
+            --card-bg: #f7f7f7;
+
+            font-family: 'Raleway', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        .colorful-theme header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .colorful-theme nav {
+            background-color: var(--secondary-color);
+            padding: 1rem;
+        }
+
+        .colorful-theme nav ul li a {
+            color: white;
+            font-weight: bold;
+        }
+
+        .colorful-theme .service-card,
+        .colorful-theme .about-content,
+        .colorful-theme .contact-info {
+            background-color: var(--card-bg);
+            border: 3px solid var(--accent-color);
+            border-radius: 15px;
+        }
+
+        .colorful-theme h2 {
+            color: var(--primary-color);
+            text-transform: uppercase;
+        }
+
+        .colorful-theme .service-card h3 {
+            color: var(--secondary-color);
+        }
+
+        .colorful-theme footer {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        /* Common Styles (apply to all themes) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: inherit;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        header {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        nav {
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        section {
+            margin-bottom: 6rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            padding: 3rem;
+        }
+
+        .about-image {
+            flex: 1;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-text {
+            flex: 2;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <header>
+        <h1>MN Technologies</h1>
+        <p>Empowering Businesses with Innovative IT Solutions</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section id="home">
+            <h2>Welcome to MN Technologies</h2>
+            <p>We provide cutting-edge IT solutions to help your business thrive in the digital age. Our team of experts is dedicated to delivering innovative and efficient technology services tailored to your unique needs.</p>
+        </section>
+        
+        <section id="services">
+            <h2>Our Services</h2>
+            <div class="services">
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31" alt="Network Solutions">
+                    <h3>Network Solutions</h3>
+                    <p>Secure and efficient network infrastructure design and implementation.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8" alt="Cloud Services">
+                    <h3>Cloud Services</h3>
+                    <p>Seamless cloud integration and management for scalable business operations.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb" alt="Cybersecurity">
+                    <h3>Cybersecurity</h3>
+                    <p>Advanced security measures to protect your valuable data and assets.</p>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf" alt="IT Consulting">
+                    <h3>IT Consulting</h3>
+                    <p>Expert guidance to align your IT strategy with your business goals.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="about">
+            <h2>About MN Technologies</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c" alt="MN Technologies Team">
+                </div>
+                <div class="about-text">
+                    <p>MN Technologies (MN Tek) is a leading provider of comprehensive IT solutions. With years of experience and a team of skilled professionals, we are committed to helping businesses leverage technology to achieve their full potential.</p>
+                    <p>Our expertise spans across various domains of information technology, enabling us to offer holistic solutions that drive growth, efficiency, and innovation for our clients.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <p>Get in touch with us to discuss how we can help your business succeed:</p>
+                <p>Email: info@mntek.com</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Address: 123 Tech Street, Innovation City, MN 12345</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 MN Technologies (MN Tek). All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Add smooth scrolling to nav links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

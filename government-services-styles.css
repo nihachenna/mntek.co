@@ -1,0 +1,64 @@
+/* Government Services Page Specific Styles */
+
+/* Header styles */
+.government-services-header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1589561253898-768105ca91a8');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Main content styles */
+.government-services-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+}
+
+.government-services-section {
+    background-color: var(--card-bg, #ffffff);
+    border-radius: 10px;
+    padding: 3rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.government-services-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color, #0077B5);
+}
+
+.government-services-section h3 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--secondary-color, #00A0DC);
+}
+
+.government-services-section p {
+    margin-bottom: 1rem;
+}
+
+.government-services-section ul {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .government-services-main {
+        padding: 2rem 1rem;
+    }
+
+    .government-services-section {
+        padding: 2rem;
+    }
+
+    .government-services-section h2 {
+        font-size: 2rem;
+    }
+
+    .government-services-section h3 {
+        font-size: 1.5rem;
+    }
+}
